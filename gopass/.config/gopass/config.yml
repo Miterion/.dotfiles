@@ -1,0 +1,11 @@
+root:
+  askformore: false
+  autoimport: false
+  autosync: true
+  cliptimeout: 45
+  noconfirm: false
+  nopager: false
+  path: /home/heiko/.password-store
+  safecontent: false
+mounts: {}
+version: 1.4.1

@@ -1,0 +1,11 @@
+[pull]
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[user]
+	# add here your gpg key as printed by gpg -K
+	signingkey = C04883061229DACF085D3D4F594F33A0E2536E69
+[commit]
+	gpgsign = true
