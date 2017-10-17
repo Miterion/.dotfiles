@@ -92,6 +92,7 @@ alias v='f -e nvim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 alias gt='gnome-terminal' #open a new terminal with the same path
+alias cd='rm -ri' # optimize cd call
 
 
 #export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
