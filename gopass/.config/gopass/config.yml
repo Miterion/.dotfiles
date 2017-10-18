@@ -1,5 +1,5 @@
 root:
-  askformore: false
+  askformore: true
   autoimport: false
   autosync: true
   cliptimeout: 45
