@@ -116,3 +116,5 @@ source ~/.config/autoenv/autoenv.zsh
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 source <(gopass completion zsh)
 eval "$(fasd --init auto)"
+
+source virtualenvwrapper_lazy.sh
