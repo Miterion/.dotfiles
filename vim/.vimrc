@@ -95,5 +95,10 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-nnoremap <C-b> :bprevious<CR>                                                                                                                               
-nnoremap <C-n> :bnext<CR>                                                   
+" Easier buffer navigation
+nnoremap <C-b> :bprevious<CR>
+nnoremap <C-n> :bnext<CR>
+
+" Save session
+nnoremap <F5> :mksession .vim_session<CR>
+nnoremap <F9> :source .vim_session<CR>
