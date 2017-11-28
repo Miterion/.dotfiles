@@ -100,5 +100,5 @@ nnoremap <C-b> :bprevious<CR>
 nnoremap <C-n> :bnext<CR>
 
 " Save session
-nnoremap <F5> :mksession .vim_session<CR>
+nnoremap <F5> :mksession! .vim_session<CR>
 nnoremap <F9> :source .vim_session<CR>
