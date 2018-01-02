@@ -33,6 +33,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mhartington/oceanic-next'
 Plugin 'scrooloose/nerdtree'
+Plugin 'luochen1990/rainbow'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -60,6 +61,8 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+let g:rainbow_active = 1
+
 " Theme
 syntax enable
 colorscheme OceanicNext
@@ -80,6 +83,7 @@ if has('nvim')
 	Plugin 'donRaphaco/neotex'
 	Plugin 'davidhalter/jedi-vim'
 	Plugin 'Chiel92/vim-autoformat'
+	Plugin 'tpope/vim-surround'
 	call deoplete#enable()
 	let g:neotex_delay=2000
 	set clipboard=unnamedplus
