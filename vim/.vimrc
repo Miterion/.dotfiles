@@ -106,3 +106,13 @@ nnoremap <C-n> :bnext<CR>
 " Save session
 nnoremap <F5> :mksession! .vim_session<CR>
 nnoremap <F9> :source .vim_session<CR>
+
+" Make switching buffers possible
+set hidden
+
+" Keep undos
+set undodir=/home/heiko/.vimundo/
+set undofile
+
+" Correct intendation for yaml files
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
