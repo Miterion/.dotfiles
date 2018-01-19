@@ -114,7 +114,9 @@ export PATH=$PATH:$GOPATH/bin:~/.gem/ruby/2.4.0/bin
 
 source ~/.config/autoenv/autoenv.zsh
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-source <(gopass completion zsh)
+#source <(gopass completion zsh)
+source <(gopass completion zsh | head -n -1 | tail -n +2)
+compdef _gopass gopass
 eval "$(fasd --init auto)"
 
 source virtualenvwrapper_lazy.sh
