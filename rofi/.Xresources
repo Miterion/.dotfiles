@@ -1,0 +1,7 @@
+rofi.color-enabled: true
+rofi.color-window: argb:ff002b37, #002b37, argb:ff003642
+rofi.color-normal: argb:ff002b37, #ffffff, argb:ff002b37, #003642, #ffffff
+rofi.color-active: argb:ff002b37, #008ed4, argb:ff002b37, #003642, #008ed4
+rofi.color-urgent: argb:ff002b37, #da4281, argb:ff002b37, #003642, #da4281
+rofi.show-icons: true
+Xcursor.size: 16
