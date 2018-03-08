@@ -81,14 +81,20 @@ if has('nvim')
 	let g:python3_host_prog = '/home/heiko/.vim/nvim3/bin/python'
 	Plugin 'Shougo/deoplete.nvim'
 	Plugin 'donRaphaco/neotex'
-	Plugin 'davidhalter/jedi-vim'
+	Plugin 'zchee/deoplete-jedi'
 	Plugin 'Chiel92/vim-autoformat'
 	Plugin 'tpope/vim-surround'
+	Plugin 'ctrlpvim/ctrlp.vim'
+	Plugin 'farseer90718/vim-taskwarrior'
+	Plugin 'wokalski/autocomplete-flow'
+	Plugin 'Shougo/neosnippet'
+  	Plugin 'Shougo/neosnippet-snippets'
 	call deoplete#enable()
 	let g:neotex_delay=2000
 	set clipboard=unnamedplus
 	tnoremap <Esc> <C-\><C-n>
 	noremap <F3> :Autoformat<CR>
+	let g:neosnippet#enable_completed_snippet = 1
 endif
 
 let g:python_host_skip_check=1
