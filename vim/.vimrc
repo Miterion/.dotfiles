@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set runtimepath+=~/.vim/plugged/vim-airline/
+set fileencodings=utf-8
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -58,7 +59,7 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline_theme='oceanicnext'
 if (has("termguicolors"))
- set termguicolors
+ ""set termguicolors
 endif
 
 let g:rainbow_active = 1
@@ -68,33 +69,32 @@ syntax enable
 colorscheme OceanicNext
 
 "Leader for ycm
-let mapleader=","
-nnoremap ,gt :YcmCompleter GoTo<CR>
+let mapleader = "\<SPACE>"
+let maplocalleader = "\<SPACE>"
 
 " Mutt Settings
-au BufRead /tmp/mutt-* set tw=72 
+au BufRead /tmp/neomutt-* set tw=72
 
 " Jump to the last line when a file is opened
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 if has('nvim')
-	let g:python_host_prog = '/home/heiko/.vim/nvim2/bin/python'
+	"let g:python_host_prog = '/home/heiko/.vim/nvim2/bin/python'
 	let g:python3_host_prog = '/home/heiko/.vim/nvim3/bin/python'
 	Plugin 'Shougo/deoplete.nvim'
-	Plugin 'donRaphaco/neotex'
 	Plugin 'zchee/deoplete-jedi'
 	Plugin 'Chiel92/vim-autoformat'
 	Plugin 'tpope/vim-surround'
 	Plugin 'ctrlpvim/ctrlp.vim'
-	Plugin 'farseer90718/vim-taskwarrior'
 	Plugin 'wokalski/autocomplete-flow'
-	Plugin 'Shougo/neosnippet'
-  	Plugin 'Shougo/neosnippet-snippets'
+	Plugin 'lervag/vimtex'
+	Plugin 'tbodt/deoplete-tabnine'
+	Plugin 'Shougo/neosnippet.vim'
+	Plugin 'Shougo/neosnippet-snippets'
 	call deoplete#enable()
 	let g:neotex_delay=2000
 	set clipboard=unnamedplus
 	tnoremap <Esc> <C-\><C-n>
 	noremap <F3> :Autoformat<CR>
-	let g:neosnippet#enable_completed_snippet = 1
 endif
 
 let g:python_host_skip_check=1
@@ -122,3 +122,27 @@ set undofile
 
 " Correct intendation for yaml files
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Ignore certain foldertypes
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/venv/*
+
+" Make search sane
+set ignorecase
+set smartcase
+
+" Snippet settings
+let g:neosnippet#snippets_directory='~/.vim/UltiSnips'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+imap <expr><silent><CR> pumvisible() ? deoplete#close_popup() .
+      \ "\<Plug>(neosnippet_jump_or_expand)" : "\<CR>"
+smap <silent><CR> <Plug>(neosnippet_jump_or_expand)
+

@@ -16,7 +16,7 @@ margin-bottom = 5
 monitor = ${env:MONITOR:eDP-1}
 dock = false
 width = 100%
-height = 32
+height = 52
 offset-x = 0
 offset-y = 0
 
@@ -41,18 +41,19 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans:pixelsize=10;0
+font-0 = NotoSans:pixelsize=14;0
 font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = fontawesome:pixelsize=9;0
+font-2 = FontAwesome:pixelsize=12;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume memory cpu wlan battery temperature date powermenu
+modules-right = volume memory cpu wlan battery temperature date powermenu mails
 
 tray-position = right
 ;tray-transparent = false
 ;tray-background = #0063ff
-override-redirect = true
+override-redirect = false
+tray-maxsize = 16
 
 
 wm-restack = i3
@@ -160,7 +161,7 @@ label-underline = #e40303
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlp61s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -301,10 +302,12 @@ menu-2-1-exec = menu-open-0
 
 
 
-[module/redshift]
+[module/mails]
 type = custom/script
 interval = 5
 
-exec = ~/.config/polybar/redshift.sh
+exec = ~/.config/polybar/imap.sh
+click-left = ~/.config/polybar/imap_control.sh
+
 
 ; vim:ft=dosini

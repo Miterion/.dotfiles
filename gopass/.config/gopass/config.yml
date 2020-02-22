@@ -1,13 +1,37 @@
 root:
   askformore: true
+  autoclip: false
+  autoprint: false
   autoimport: false
   autosync: true
+  check_recipient_hash: false
   cliptimeout: 45
+  concurrency: 1
+  editrecipients: false
+  nocolor: false
   noconfirm: false
   nopager: false
-  path: /home/heiko/.password-store
+  notifications: false
+  path: gpgcli-gitcli-fs+file:///home/heiko/.password-store
+  recipient_hash: {}
   safecontent: false
   usesymbols: false
-  nocolor: false
-mounts: {}
-version: 1.6.10
+mounts:
+  isp-srv-dev-pass:
+    askformore: true
+    autoclip: false
+    autoprint: false
+    autoimport: false
+    autosync: true
+    check_recipient_hash: false
+    cliptimeout: 45
+    concurrency: 1
+    editrecipients: false
+    nocolor: false
+    noconfirm: false
+    nopager: false
+    notifications: false
+    path: gpgcli-gitcli-fs+file:///home/heiko/.password-store-isp/
+    recipient_hash: {}
+    safecontent: false
+    usesymbols: false

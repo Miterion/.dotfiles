@@ -12,22 +12,30 @@
 set $mod Mod4
 exec compton -b 
 exec dunst &
-exec nitrogen --restore
+#exec nitrogen --restore
 exec setxkbmap de
-exec variety
-exec udiskie
+#exec variety
+#exec udiskie
+exec xrandr --dpi 140
+exec /home/heiko/.fehbg
+exec libinput-gestures-setup start
+exec --no-startup-id /usr/lib/kdeconnectd
+
+# activate emoji keyboard
+bindsym $mod+Shift+e exec rofimoji
 
 gaps inner 4
 gaps outer 4
+smart_gaps on
 client.focused #4286f4 #4286f4 #ffffff #4286f4 #4286f4
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
 
 # set correct window setting for pdfpc
 for_window [ title="^pdfpc - present" ] border none floating enable
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -49,14 +57,6 @@ bindsym $mod+Mod1+Right move workspace to output right
 bindsym $mod+Mod1+Down move workspace to output down
 bindsym $mod+Mod1+Left move workspace to output left
 
-
-# variety control
-bindsym $mod+n exec --no-startup-id variety -n
-bindsym $mod+b exec --no-startup-id variety -p
-bindsym $mod+t exec --no-startup-id variety -t
-bindsym $mod+Shift+f exec --no-startup-id variety -f
-bindsym $mod+g exec --no-startup-id variety /home/heiko/.config/variety/Fetched/wallhaven-226335.png && variety -n
-
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
@@ -66,8 +66,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 # increase screen br
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 # decrease screen brightness
 
 # lock screen
-bindsym $mod+Control+l exec ~/Documents/blur.sh pub
-bindsym $mod+Mod1+l exec ~/Documents/blur.sh sec
+bindsym $mod+Control+l exec betterlockscreen -l
 
 # media control
 bindsym $mod+Shift+n exec --no-startup-id playerctl next
@@ -79,28 +78,33 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
+# scratch windows
+bindsym $mod+Shift+s move scratchpad
+bindsym $mod+s scratchpad show
+
 # start a terminal
-bindsym $mod+Return exec gnome-terminal 
+bindsym $mod+Return exec kitty #gnome-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "rofi -combi-modi drun,window -show combi -modi combi"
-bindsym $mod+q exec rofi -show run
+bindsym $mod+d exec "rofi -combi-modi drun,window -show combi -modi combi -dpi 140"
+bindsym $mod+o exec "rofi -show window -dpi 140"
+bindsym $mod+q exec rofi -show run -dpi 140
 
 #open gopass with rofi
-bindsym $mod+p exec gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c
+bindsym $mod+p exec gopass ls --flat | rofi -dmenu -dpi 140| xargs --no-run-if-empty gopass show -c
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # change focus
-bindsym $mod+j focus left
-#bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+k focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 #bindsym $mod+Left focus left
@@ -121,7 +125,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -130,7 +134,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -152,7 +156,7 @@ set $ws6 6:  sh3
 set $ws7 7:  sh4
 set $ws8 8:  sh5
 set $ws9 9:  sh6
-set $ws10 10:  music
+set $ws10 10:  music
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

@@ -1,5 +1,6 @@
-# Path to your oh-my-zsh installation.
-  export ZSH=/home/heiko/.oh-my-zsh
+#zmodload zsh/zprof
+
+export ZSH=/home/heiko/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,11 +50,11 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo nyan)
+plugins=(git sudo last-working-dir)
 
 # User configuration
 
-export PATH="/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/bin/core_perl"
+export PATH="/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/bin/core_perl:/usr/bin/vendor_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -62,14 +63,9 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nvim'
- else
-   export EDITOR='nvim'
- fi
+export EDITOR='nvim'
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ANSIBLE_NOCOWS=1
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -84,17 +80,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias open="xdg-open"
 alias python="python3"
-alias lck="~/blur.sh && dm-tool switch-to-greeter"
 alias vi="nvim"
 alias weather="curl wttr.in"
-alias addssh="ssh-add && ssh-add ~/.ssh/ke"
 alias v='f -e nvim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 alias gt='gnome-terminal' #open a new terminal with the same path
+alias sysuser='systemctl --user'
+alias shell='pipenv shell'
+alias cat='bat'
+alias fzf='fzf --preview "bat --color \"always\" {}"'
 
-
-#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
@@ -103,20 +99,32 @@ fi
 export GPG_TTY=$(tty)
 
 # Refresh gpg-agent tty in case user switches into an X session
-#gpg-connect-agent updatestartuptty /bye >/dev/null
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
-export AUTOENV_FILE_ENTER=".env"
-export AUTOENV_FILE_LEAVE=".envleave"
-export AUTOENV_LOOK_UPWARDS=0
 export GOPATH=/home/heiko/Documents/go
-export PATH=$PATH:$GOPATH/bin:~/.gem/ruby/2.4.0/bin
+export LOCALPYTHON=/home/heiko/.local/bin
+export PYTHONPATH=/home/heiko/.local/lib/python3.6/site-packages/
+export PATH=$PATH:$GOPATH/bin:~/.gem/ruby/2.5.0/bin:$LOCALPYTHON
+export PATH=~/.npm-global/bin:$PATH
+export PATH=$PATH:/home/heiko/.gem/ruby/2.6.0/bin
+export WTF_OWM_API_KEY=b2b95e6bc0e5e079dc59bd5f27224050
 
-
-source ~/.config/autoenv/autoenv.zsh
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 #source <(gopass completion zsh)
 source <(gopass completion zsh | head -n -1 | tail -n +2)
 compdef _gopass gopass
 eval "$(fasd --init auto)"
+source /usr/share/fzf/completion.zsh
 
-source virtualenvwrapper_lazy.sh
+setopt extendedglob
+
+# GOSTUFF
+export GO111MODULE=on
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
+alias icat="kitty +kitten icat"
+alias d="kitty +kitten diff"
+alias ssh="kitty +kitten ssh"
+alias clip="kitty +kitten clipboard"
+#zprof
