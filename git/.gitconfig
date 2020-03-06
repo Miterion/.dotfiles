@@ -8,6 +8,11 @@
 	# add here your gpg key as printed by gpg -K
 	signingkey = C04883061229DACF085D3D4F594F33A0E2536E69
 	name = Heiko Carrasco
-	email = heiko.carrasco@fachschaft.informatik.tu-darmstadt.de
+	email = heiko.carrasco@yahoo.com
 [commit]
 	gpgsign = true
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[credential]
+	helper = "!gopass git-credential $@"
