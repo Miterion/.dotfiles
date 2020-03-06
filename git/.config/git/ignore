@@ -1,3 +1,4 @@
 .env
 .envleave
 .vim_session
+venv/*
