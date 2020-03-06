@@ -67,9 +67,6 @@ export EDITOR='nvim'
 
 export ANSIBLE_NOCOWS=1
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -85,7 +82,6 @@ alias weather="curl wttr.in"
 alias v='f -e nvim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
-alias gt='gnome-terminal' #open a new terminal with the same path
 alias sysuser='systemctl --user'
 alias shell='pipenv shell'
 alias cat='bat'
