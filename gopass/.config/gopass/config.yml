@@ -1,6 +1,6 @@
 root:
   askformore: true
-  autoclip: false
+  autoclip: true
   autoprint: false
   autoimport: false
   autosync: true
