@@ -66,7 +66,7 @@ let g:rainbow_active = 1
 
 " Theme
 syntax enable
-colorscheme OceanicNext
+"colorscheme OceanicNext
 
 "Leader for ycm
 let mapleader = "\<SPACE>"

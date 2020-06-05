@@ -21,7 +21,7 @@ offset-x = 0
 offset-y = 0
 
 ;background = ${xrdb:color9}
-background = #dd222222
+background = #3D4752
 foreground = #dfdfdf
 transparent = true
 
@@ -30,7 +30,7 @@ transparent = true
 overline-size = 2
 overline-color = #f00
 underline-size = 2
-underline-color = #00f
+underline-color = #80BBE7
 
 border-bottom = 2
 border-bottom-color = #333
@@ -93,7 +93,7 @@ label-unfocused = %name%
 label-unfocused-padding = 2
 
 label-urgent = %name%
-label-urgent-foreground = #cc0000
+label-urgent-foreground = #FF8E7D
 label-urgent-padding = 2
 
 label-visible = %name%

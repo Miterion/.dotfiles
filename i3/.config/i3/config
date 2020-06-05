@@ -24,10 +24,27 @@ exec --no-startup-id /usr/lib/kdeconnectd
 # activate emoji keyboard
 bindsym $mod+Shift+e exec rofimoji
 
+set $accent0 #ff8e7d
+set $accent1 #ffc36d
+set $accent2 #ffdf67
+set $accent3 #a3d971
+set $accent4 #55bba7
+set $accent5 #80bbe7
+set $accent6 #b490b6
+set $accent7 #f6b4c8
+set $shade0 #3d4752
+set $shade1 #505c6a
+set $shade2 #77818d
+set $shade3 #a5a5a5
+set $shade4 #afb1b3
+set $shade5 #cdced1
+set $shade6 #e6e6e6
+set $shade7 #ffffff
 gaps inner 4
 gaps outer 4
 smart_gaps on
-client.focused #4286f4 #4286f4 #ffffff #4286f4 #4286f4
+client.focused $accent5 $accent5 $shade7 $accent5 $accent5
+client.urgent $accent0 $accent0 $shade7 $accent0 $accent0
 for_window [class="^.*"] border pixel 2
 
 # set correct window setting for pdfpc
