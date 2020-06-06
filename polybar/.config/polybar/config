@@ -23,7 +23,7 @@ offset-y = 0
 ;background = ${xrdb:color9}
 background = #3D4752
 foreground = #dfdfdf
-transparent = true
+transparent = false
 
 ;lineheight = 1
 ;linecolor = #555
@@ -85,7 +85,7 @@ index-sort = true
 strip-wsnumbers = true
 
 label-focused = %name%
-label-focused-background = #ee333333
+label-focused-background = ##42ABAB
 label-focused-underline= #fffffff
 label-focused-padding = 2
 
