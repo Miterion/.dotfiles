@@ -1,0 +1,8 @@
+name: latex
+parent: default
+
+matches:
+  - trigger: ":fframe"
+    replace: |
+      \begin{fframe}{}
+      \end{fframe}

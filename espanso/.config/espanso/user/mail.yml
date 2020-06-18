@@ -1,0 +1,14 @@
+name: mail
+parent: default
+
+matches:
+  - trigger: ":vg"
+    replace: |
+      Viele Grüße
+
+      Heiko
+  - trigger: ":mfg"
+    replace: |
+      Mit freundlichen Grüßen
+
+      Heiko Carrasco
