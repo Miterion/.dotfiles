@@ -47,7 +47,7 @@ font-2 = FontAwesome:pixelsize=12;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume memory cpu wlan battery temperature date powermenu mails
+modules-right = volume memory cpu wlan battery temperature date powermenu mails housing
 
 tray-position = right
 ;tray-transparent = false
@@ -309,5 +309,13 @@ interval = 5
 exec = ~/.config/polybar/imap.sh
 click-left = ~/.config/polybar/imap_control.sh
 
+[module/housing]
+type = custom/script
+interval = 90
+exec = ~/.config/polybar/uothousing 897699
+click-left = ~/.config/polybar/uothousing -r
+label =  %output%
+
 
 ; vim:ft=dosini
+;
