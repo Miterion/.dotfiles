@@ -18,3 +18,8 @@
 	helper = "!gopass git-credential $@"
 [push]
 	followTags = true
+[sendemail]
+	smtpserver = mail.miterion.de
+	smtpuser = me@miterion.de
+	smtpencryption = tls
+	smtpserverport = 587
