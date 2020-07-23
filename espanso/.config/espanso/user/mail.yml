@@ -12,3 +12,9 @@ matches:
       Mit freundlichen Grüßen
 
       Heiko Carrasco
+  - trigger: ":gt"
+    replace: |
+      Guten Tag,
+
+
+
