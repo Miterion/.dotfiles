@@ -47,7 +47,7 @@ font-2 = FontAwesome:pixelsize=12;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume memory cpu wlan battery temperature date powermenu mails housing
+modules-right = volume memory cpu wlan battery temperature date powermenu mails
 
 tray-position = right
 ;tray-transparent = false
