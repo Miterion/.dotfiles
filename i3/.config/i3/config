@@ -100,7 +100,7 @@ bindsym $mod+Shift+s move scratchpad
 bindsym $mod+s scratchpad show
 
 # start a terminal
-bindsym $mod+Return exec kitty #gnome-terminal 
+bindsym $mod+Return exec alacritty #gnome-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
