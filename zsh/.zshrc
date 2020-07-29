@@ -1,5 +1,3 @@
-#zmodload zsh/zprof
-
 export ZSH=/home/heiko/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -13,7 +11,7 @@ ZSH_THEME="agnoster"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
@@ -73,8 +71,6 @@ export ANSIBLE_NOCOWS=1
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias open="xdg-open"
 alias python="python3"
 alias vi="nvim"
@@ -100,10 +96,7 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 export GOPATH=/home/heiko/Documents/go
 export LOCALPYTHON=/home/heiko/.local/bin
 export PYTHONPATH=/home/heiko/.local/lib/python3.6/site-packages/
-export PATH=$PATH:$GOPATH/bin:~/.gem/ruby/2.5.0/bin:$LOCALPYTHON
 export PATH=~/.npm-global/bin:$PATH
-export PATH=$PATH:/home/heiko/.gem/ruby/2.6.0/bin
-export WTF_OWM_API_KEY=b2b95e6bc0e5e079dc59bd5f27224050
 
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 #source <(gopass completion zsh)
@@ -116,11 +109,5 @@ setopt extendedglob
 
 # GOSTUFF
 export GO111MODULE=on
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
 
-alias icat="kitty +kitten icat"
-alias d="kitty +kitten diff"
-alias ssh="kitty +kitten ssh"
-alias clip="kitty +kitten clipboard"
 #zprof
