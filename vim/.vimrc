@@ -146,3 +146,4 @@ imap <expr><silent><CR> pumvisible() ? deoplete#close_popup() .
       \ "\<Plug>(neosnippet_jump_or_expand)" : "\<CR>"
 smap <silent><CR> <Plug>(neosnippet_jump_or_expand)
 
+let g:tex_flavor = 'latex'
