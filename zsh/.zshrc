@@ -94,9 +94,10 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 export GOPATH=/home/heiko/Documents/go
+export GOBINPATH=/home/heiko/Documents/go/bin
 export LOCALPYTHON=/home/heiko/.local/bin
 export PYTHONPATH=/home/heiko/.local/lib/python3.6/site-packages/
-export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.npm-global/bin:$GOBINPATH:$PATH
 
 #[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 #source <(gopass completion zsh)
