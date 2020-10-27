@@ -1,3 +1,5 @@
+[init]
+	defaultBranch = main
 [pull]
 	rebase = true
 [filter "lfs"]
@@ -13,6 +15,7 @@
 	gpgsign = true
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	attributesfile = /home/heiko/.gitattributes
 
 [credential]
 	helper = "!gopass git-credential $@"
