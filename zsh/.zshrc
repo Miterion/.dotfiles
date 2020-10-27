@@ -104,7 +104,7 @@ export PATH=~/.npm-global/bin:$GOBINPATH:$PATH
 source <(gopass completion zsh | head -n -1 | tail -n +2)
 compdef _gopass gopass
 eval "$(fasd --init auto)"
-source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 setopt extendedglob
 
