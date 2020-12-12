@@ -16,5 +16,12 @@ matches:
     replace: |
       Guten Tag,
 
+  - trigger: ":sgf"
+    replace: "Sehr geehrte Frau "
+  - trigger: ":sgh"
+    replace: "Sehr geehrter Herr "
+  - trigger: ":sgdh"
+    replace: |
+      Sehr geehrte Damen und Herren,
 
 
