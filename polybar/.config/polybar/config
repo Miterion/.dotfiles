@@ -199,6 +199,7 @@ date = %%{F#55}%%{F#ff} %H:%M
 date-alt = %%{F#55}%{F#ff} %Y-%m-%d  %%{F#55}%%{F#ff} %H:%M
 interval = 5
 format-underline = #750787
+#format-prefix = 
 
 
 [module/volume]
@@ -265,8 +266,8 @@ format-underline = #004dff
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = #e60053
 
 ramp-0 = 
@@ -309,12 +310,11 @@ interval = 5
 exec = ~/.config/polybar/imap.sh
 click-left = ~/.config/polybar/imap_control.sh
 
-[module/housing]
+[module/torontotime]
 type = custom/script
-interval = 90
-exec = ~/.config/polybar/uothousing 897699
-click-left = ~/.config/polybar/uothousing -r
-label =  %output%
+interval = 30
+exec = TZ=Canada/Eastern date +"%H:%M"
+label =  %output%
 
 
 ; vim:ft=dosini
