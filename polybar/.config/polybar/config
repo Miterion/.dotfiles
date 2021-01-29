@@ -52,7 +52,7 @@ modules-right = volume memory cpu wlan battery temperature date powermenu mails
 tray-position = right
 ;tray-transparent = false
 ;tray-background = #0063ff
-override-redirect = false
+override-redirect = true
 tray-maxsize = 16
 
 
