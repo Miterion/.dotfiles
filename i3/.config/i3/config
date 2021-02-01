@@ -22,7 +22,7 @@ exec libinput-gestures-setup start
 exec --no-startup-id /usr/lib/kdeconnectd
 
 # activate emoji keyboard
-bindsym $mod+Shift+e exec rofimoji
+bindsym $mod+Shift+e exec rofimoji -a copy
 
 set $accent0 #ff8e7d
 set $accent1 #ffc36d
