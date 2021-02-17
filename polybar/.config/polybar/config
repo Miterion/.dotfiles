@@ -47,7 +47,7 @@ font-2 = FontAwesome:pixelsize=12;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume memory cpu wlan battery temperature date powermenu mails
+modules-right = volume memory cpu wlan battery temperature date powermenu yubicheck mails
 
 tray-position = right
 ;tray-transparent = false
@@ -310,12 +310,10 @@ interval = 5
 exec = ~/.config/polybar/imap.sh
 click-left = ~/.config/polybar/imap_control.sh
 
-[module/torontotime]
+[module/yubicheck]
 type = custom/script
 interval = 30
-exec = TZ=Canada/Eastern date +"%H:%M"
-label =  %output%
-
+exec = ~/.config/polybar/yubicheck.sh
 
 ; vim:ft=dosini
 ;
