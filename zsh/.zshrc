@@ -52,7 +52,7 @@ plugins=(git sudo last-working-dir)
 
 # User configuration
 
-export PATH="/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/bin/core_perl:/usr/bin/vendor_perl"
+export PATH="/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/bin/core_perl:/usr/bin/vendor_perl:/home/heiko/.cargo/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
