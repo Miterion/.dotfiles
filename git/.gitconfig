@@ -14,7 +14,7 @@
 [commit]
 	gpgsign = true
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 	attributesfile = /home/heiko/.gitattributes
 
 [credential]
@@ -26,3 +26,17 @@
 	smtpuser = me@miterion.de
 	smtpencryption = tls
 	smtpserverport = 587
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = line-numbers
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
+    line-numbers-zero-style = black white
