@@ -111,4 +111,7 @@ setopt extendedglob
 # GOSTUFF
 export GO111MODULE=on
 
+# Use bat as pager for man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 #zprof
