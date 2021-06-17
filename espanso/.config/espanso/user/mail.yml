@@ -16,11 +16,15 @@ matches:
     replace: |
       Guten Tag,
 
-  - trigger: ":sgf"
-    replace: "Sehr geehrte Frau "
-  - trigger: ":sgh"
-    replace: "Sehr geehrter Herr "
-  - trigger: ":sgdh"
+  - trigger: ":sg"
+    form: "{{choice}} {{name}}\n\n"
+    form_fields:
+      choice:
+        type: list
+        values:
+          - Sehr geehrter Herr 
+          - Sehr geehrte Frau
+  - trigger: ":sdh"
     replace: |
       Sehr geehrte Damen und Herren,
 
