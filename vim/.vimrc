@@ -88,8 +88,6 @@ if has('nvim')
 	Plugin 'wokalski/autocomplete-flow'
 	Plugin 'lervag/vimtex'
 	Plugin 'tbodt/deoplete-tabnine'
-	Plugin 'Shougo/neosnippet.vim'
-	Plugin 'Shougo/neosnippet-snippets'
 	call deoplete#enable()
 	let g:neotex_delay=2000
 	set clipboard=unnamedplus
@@ -129,21 +127,5 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/venv/*
 " Make search sane
 set ignorecase
 set smartcase
-
-" Snippet settings
-let g:neosnippet#snippets_directory='~/.vim/UltiSnips'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-imap <expr><silent><CR> pumvisible() ? deoplete#close_popup() .
-      \ "\<Plug>(neosnippet_jump_or_expand)" : "\<CR>"
-smap <silent><CR> <Plug>(neosnippet_jump_or_expand)
 
 let g:tex_flavor = 'latex'
