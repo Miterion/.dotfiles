@@ -20,6 +20,7 @@ exec xrandr --dpi 140
 exec /home/heiko/.fehbg
 exec libinput-gestures-setup start
 exec --no-startup-id /usr/lib/kdeconnectd
+exec --no-startup-id pulseeffects --gapplication-service &
 
 # activate emoji keyboard
 bindsym $mod+Shift+e exec rofimoji -a copy
@@ -108,7 +109,7 @@ bindsym $mod+Return exec alacritty #gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "sh ~/.config/rofi/launcher.sh"
+bindsym $mod+d exec "sh ~/.config/rofi/bin/launcher_misc"
 #"rofi -combi-modi drun,window -show combi -modi combi -dpi 140"
 bindsym $mod+o exec "rofi -show window -dpi 140"
 bindsym $mod+q exec rofi -show run -dpi 140
