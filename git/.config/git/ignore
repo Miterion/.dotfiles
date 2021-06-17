@@ -2,3 +2,4 @@
 .envleave
 .vim_session
 venv/*
+.nobackup
