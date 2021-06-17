@@ -1,0 +1,22 @@
+name: fs
+parent: default
+
+matches:
+  - trigger: ":lust"
+    replace: "Lehr- und Studienausschuss"
+  - trigger: ":lusp"
+    replace: "Lehr- und Studienausschuss (LuSt)"
+  - trigger: ":fbr"
+    replace: "Fachbereichsrat"
+  - trigger: ":fbp"
+    replace: "Fachbereichsrat (FBR)"
+  - trigger: ":fsd"
+    replace: "fachschaft.informatik.tu-darmstadt.de"
+  - trigger: ":inf"
+    replace: "informatik.tu-darmstadt.de"
+  - trigger: ":tud"
+    replace: "tu-darmstadt.de"
+  - trigger: ":studm"
+    replace: "Studentischen Mitglieder"
+  - trigger: ":fb"
+    replace: "Fachbereich"
